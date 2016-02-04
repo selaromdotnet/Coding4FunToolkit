@@ -34,7 +34,7 @@
 		<common:BaseHeader 
 			Title="{StaticResource AppName}" 
 			ApplicationTitleVisibility="Collapsed" />
-		
+
 		<GridView
 			ItemContainerStyle="{StaticResource RemoveMouseOverlayStyle}"
             AutomationProperties.AutomationId="ItemsGridView"
@@ -53,7 +53,7 @@
 						Au
 				</TextBlock>
 			</coding4Fun:Tile>
-			
+
 			<coding4Fun:Tile 
 				Label="Button"
 				Style="{StaticResource TileStyle}" 
@@ -71,7 +71,7 @@
 						Ch
 				</TextBlock>
 			</coding4Fun:Tile>
-			
+
 			<coding4Fun:Tile 
 				Label="Color" 
 				Style="{StaticResource TileStyle}"
@@ -90,31 +90,31 @@
 				</TextBlock>
 			</coding4Fun:Tile>
 
-            <coding4Fun:Tile
+			<coding4Fun:Tile
 					Style="{StaticResource TileStyle}"
 					Label="MetroFlow"
 					Tapped="MetroFlowTapped">
-                <TextBlock Style="{StaticResource TileTextBlockStyle}">
+				<TextBlock Style="{StaticResource TileTextBlockStyle}">
 						Mf
-                </TextBlock>
-            </coding4Fun:Tile>
-            <coding4Fun:Tile
+				</TextBlock>
+			</coding4Fun:Tile>
+			<coding4Fun:Tile
 					Style="{StaticResource TileStyle}"
 					Label="Overlay"
 					Tapped="OverlayTapped">
-                <TextBlock Style="{StaticResource TileTextBlockStyle}">
+				<TextBlock Style="{StaticResource TileTextBlockStyle}">
 						Ov
-                </TextBlock>
-            </coding4Fun:Tile>
-            <coding4Fun:Tile 
+				</TextBlock>
+			</coding4Fun:Tile>
+			<coding4Fun:Tile 
 				Style="{StaticResource TileStyle}"
 				Label="Prompt"
 				Tapped="PromptsTapped">
-                <TextBlock Style="{StaticResource TileTextBlockStyle}">
+				<TextBlock Style="{StaticResource TileTextBlockStyle}">
 						Pr
-                </TextBlock>
-            </coding4Fun:Tile>
-            <coding4Fun:Tile 
+				</TextBlock>
+			</coding4Fun:Tile>
+			<coding4Fun:Tile 
 				Label="Slider" 
 				Style="{StaticResource TileStyle}"
 				Tapped="SliderTapped" >
@@ -122,30 +122,34 @@
 						Sl
 				</TextBlock>
 			</coding4Fun:Tile>
-            <coding4Fun:Tile Label="SuperImage"
+			<coding4Fun:Tile Label="SuperImage"
                              Style="{StaticResource TileStyle}"
                              Tapped="SuperImageTapped">
-                <TextBlock Style="{StaticResource TileTextBlockStyle}">
+				<TextBlock Style="{StaticResource TileTextBlockStyle}">
 						Si
-                </TextBlock>
-            </coding4Fun:Tile>
-            <coding4Fun:Tile 
+				</TextBlock>
+			</coding4Fun:Tile>
+			<coding4Fun:Tile 
 				Style="{StaticResource TileStyle}"
 				Label="Placeholder"
 				Tapped="PlaceImageTapped">
-                <TextBlock Style="{StaticResource TileTextBlockStyle}">
+				<TextBlock Style="{StaticResource TileTextBlockStyle}">
 						Si2
-                </TextBlock>
-            </coding4Fun:Tile>
-            <coding4Fun:Tile 
+				</TextBlock>
+			</coding4Fun:Tile>
+			<coding4Fun:Tile 
 				Label="Storage" 
 				Style="{StaticResource TileStyle}"
 				Tapped="StorageTapped" >
-                <TextBlock Style="{StaticResource TileTextBlockStyle}">
+				<TextBlock Style="{StaticResource TileTextBlockStyle}">
 						St
-                </TextBlock>
-            </coding4Fun:Tile>
+				</TextBlock>
+			</coding4Fun:Tile>
 
-        </GridView>
+		</GridView>
+
+		<Border BorderBrush="Yellow" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" >
+			<coding4Fun:TimeSpanPicker x:Name="picker" Width="200" Height="200" Background="Red" BorderBrush="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+		</Border>
 	</Grid>
 </common:LayoutAwarePage>

@@ -328,9 +328,65 @@
     <Compile Include="..\Coding4Fun.Toolkit.Controls\Unsupported\DialogService.cs">
       <Link>Unsupported\DialogService.cs</Link>
     </Compile>
+    <Compile Include="..\Coding4Fun.Toolkit.Controls\ValuePicker\Common\SafeRaise.cs">
+      <Link>ValuePicker\Common\SafeRaise.cs</Link>
+    </Compile>
+    <Compile Include="..\Coding4Fun.Toolkit.Controls\ValuePicker\Common\TimeSpanFormat.cs">
+      <Link>ValuePicker\Common\TimeSpanFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Coding4Fun.Toolkit.Controls\ValuePicker\Common\Tuple.cs">
+      <Link>ValuePicker\Common\Tuple.cs</Link>
+    </Compile>
+    <Compile Include="..\Coding4Fun.Toolkit.Controls\ValuePicker\TimeSpanPicker\DataSource\HourTimeSpanDataSource.cs">
+      <Link>ValuePicker\TimeSpanPicker\DataSource\HourTimeSpanDataSource.cs</Link>
+    </Compile>
+    <Compile Include="..\Coding4Fun.Toolkit.Controls\ValuePicker\TimeSpanPicker\DataSource\MinuteTimeSpanDataSource.cs">
+      <Link>ValuePicker\TimeSpanPicker\DataSource\MinuteTimeSpanDataSource.cs</Link>
+    </Compile>
+    <Compile Include="..\Coding4Fun.Toolkit.Controls\ValuePicker\TimeSpanPicker\DataSource\SecondTimeSpanDataSource.cs">
+      <Link>ValuePicker\TimeSpanPicker\DataSource\SecondTimeSpanDataSource.cs</Link>
+    </Compile>
+    <Compile Include="..\Coding4Fun.Toolkit.Controls\ValuePicker\TimeSpanPicker\DataSource\TimeSpanDataSource.cs">
+      <Link>ValuePicker\TimeSpanPicker\DataSource\TimeSpanDataSource.cs</Link>
+    </Compile>
+    <Compile Include="..\Coding4Fun.Toolkit.Controls\ValuePicker\TimeSpanPicker\ITimeSpanPickerPage.cs">
+      <Link>ValuePicker\TimeSpanPicker\ITimeSpanPickerPage.cs</Link>
+    </Compile>
+    <Compile Include="..\Coding4Fun.Toolkit.Controls\ValuePicker\TimeSpanPicker\TimeSpanPickerBasePage.cs">
+      <Link>ValuePicker\TimeSpanPicker\TimeSpanPickerBasePage.cs</Link>
+    </Compile>
+    <Compile Include="..\Coding4Fun.Toolkit.Controls\ValuePicker\TimeSpanPicker\TimeSpanValueChangedEventArgs.cs">
+      <Link>ValuePicker\TimeSpanPicker\TimeSpanValueChangedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Coding4Fun.Toolkit.Controls\ValuePicker\TimeSpanPicker\TimeSpanWrapper.cs">
+      <Link>ValuePicker\TimeSpanPicker\TimeSpanWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\Coding4Fun.Toolkit.Controls\ValuePicker\ValuePickers\ValueChangedEventArgs.cs">
+      <Link>ValuePicker\ValuePickers\ValueChangedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Coding4Fun.Toolkit.Controls\ValuePicker\ValuePickers\ValueWrapper.cs">
+      <Link>ValuePicker\ValuePickers\ValueWrapper.cs</Link>
+    </Compile>
+    <Compile Include="ValuePicker\Common\PhysicsConstants.cs" />
+    <Compile Include="ValuePicker\Primitives\ILoopingSelectorDataSource.cs" />
+    <Compile Include="ValuePicker\Primitives\LoopingSelector.cs" />
+    <Compile Include="ValuePicker\Primitives\LoopingSelectorItem.cs" />
+    <Compile Include="ValuePicker\TimeSpanPicker\TimeSpanPicker.cs" />
+    <Compile Include="ValuePicker\TimeSpanPicker\TimespanPickerPage.xaml.cs">
+      <DependentUpon>TimespanPickerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ValuePicker\ValuePickers\DataSource.cs" />
+    <Compile Include="ValuePicker\ValuePickers\IValuePickerPage.cs" />
+    <Compile Include="ValuePicker\ValuePickers\ValuePickerBase.cs" />
+    <Compile Include="ValuePicker\ValuePickers\ValuePickerBasePage.cs" />
+    <Compile Include="ValuePicker\ValuePickers\ValuePickerResources.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ValuePicker\TimeSpanPicker\TimespanPickerPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -340,6 +396,9 @@
       <Project>{260c066d-2db6-4ac1-b69b-138c8c5ce4a8}</Project>
       <Name>Coding4Fun.Toolkit %28Universal%29</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ValuePicker\Transitions\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

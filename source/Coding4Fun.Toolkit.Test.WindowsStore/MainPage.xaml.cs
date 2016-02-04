@@ -28,6 +28,7 @@ namespace Coding4Fun.Toolkit.Test.WindowsStore
 			await SafeDispatcher.Run(() =>
 			{
 				LayoutRoot.Background = new SolidColorBrush(Colors.Transparent);
+				//picker.OpenPicker();
 			});
 		}
 
