@@ -234,7 +234,7 @@ namespace Coding4Fun.Toolkit.Controls
 					//	TransitionService.SetNavigationOutTransition(frameContentWhenOpenedAsUiElement, null);
 					//}
 
-					//_frame.Navigated += OnFrameNavigated;
+					_frame.Navigated += OnFrameNavigated;
 
 					//if (_frame.GetType() == typeof(PhoneApplicationFrame))
 					//	_frame.NavigationStopped += OnFrameNavigationStoppedOrFailed;

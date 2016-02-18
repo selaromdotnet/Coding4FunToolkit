@@ -91,5 +91,10 @@ namespace Coding4Fun.Toolkit.Test.WindowsStore
         {
             Frame.Navigate(typeof(Samples.PlaceImage));
         }
-    }
+
+		private void TimeSpan_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+		{
+			Frame.Navigate(typeof(Samples.TimeSpanPage));
+		}
+	}
 }

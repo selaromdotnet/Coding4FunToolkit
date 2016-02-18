@@ -188,6 +188,9 @@
     <Compile Include="Samples\Storage.xaml.cs">
       <DependentUpon>Storage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Samples\TimeSpanPage.xaml.cs">
+      <DependentUpon>TimeSpanPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Samples\ToastPrompts.xaml.cs">
       <DependentUpon>ToastPrompts.xaml</DependentUpon>
     </Compile>
@@ -455,6 +458,10 @@
     <Page Include="Samples\Storage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Samples\TimeSpanPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\ToastPrompts.xaml">
       <SubType>Designer</SubType>

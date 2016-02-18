@@ -145,11 +145,14 @@
 						St
 				</TextBlock>
 			</coding4Fun:Tile>
-
+			<coding4Fun:Tile
+					Style="{StaticResource TileStyle}"
+					Label="Timespan"
+					Click="TimeSpan_Click">
+				<TextBlock Style="{StaticResource TileTextBlockStyle}">
+						Ts
+				</TextBlock>
+			</coding4Fun:Tile>
 		</GridView>
-
-		<Border BorderBrush="Yellow" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" >
-			<coding4Fun:TimeSpanPicker x:Name="picker" Width="200" Height="200" Background="Red" BorderBrush="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
-		</Border>
 	</Grid>
 </common:LayoutAwarePage>

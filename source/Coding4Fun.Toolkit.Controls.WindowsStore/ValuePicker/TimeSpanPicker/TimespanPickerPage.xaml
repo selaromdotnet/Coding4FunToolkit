@@ -66,7 +66,7 @@
             Text="{Binding DialogTitle}"
             Margin="24,16,12,24"/>
         <!-- LoopingSelectors -->
-        <Grid
+        <Grid Background="Red"
             Grid.Row="2"
             HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
@@ -74,31 +74,31 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Primitives:LoopingSelector
+			<Primitives:LoopingSelector Background="Blue"
                 x:Name="PrimarySelector"
                 Grid.Column="0"
-                Width="148"
+                Width="148" Height="148"
                 ItemSize="148,148">
                 <Primitives:LoopingSelector.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel
+						<StackPanel Background="Blue"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Bottom"
                             Margin="6">
                             <TextBlock
-                                Text="{Binding HourNumber}"
+                                Text="5"
                                 FontSize="54"
-                                Margin="0,-8"/>
+                                Margin="0,-8" FontFamily="Global User Interface"/>
                             <TextBlock
-                                Text="{Binding Source={StaticResource TimeSpanPickerResources}, Path=HourName}"
+                                Text="Hours"
                                 FontSize="20"
-                                Margin="0,-2"/>
+                                Margin="0,-2" FontFamily="Global User Interface"/>
 
                         </StackPanel>
                     </DataTemplate>
                 </Primitives:LoopingSelector.ItemTemplate>
             </Primitives:LoopingSelector>
-            <Primitives:LoopingSelector
+            <Primitives:LoopingSelector Background="Yellow"
                 x:Name="SecondarySelector"
                 Grid.Column="1"
                 Width="148"
@@ -124,7 +124,7 @@
                 </Primitives:LoopingSelector.ItemTemplate>
             </Primitives:LoopingSelector>
             <Primitives:LoopingSelector
-                Grid.Column="2"
+                Grid.Column="2" Background="Green"
                 x:Name="TertiarySelector"
                 Width="148"
                 ItemSize="148,148">

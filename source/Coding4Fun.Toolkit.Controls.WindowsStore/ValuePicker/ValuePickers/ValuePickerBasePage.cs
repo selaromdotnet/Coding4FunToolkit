@@ -69,7 +69,8 @@ namespace Coding4Fun.Toolkit.Controls.Primitives
 
             // Position and reveal the culture-relevant selectors
             int column = 0;
-            foreach (LoopingSelector selector in GetSelectorsOrderedByCulturePattern())
+			var selectors = GetSelectorsOrderedByCulturePattern();
+			foreach (LoopingSelector selector in selectors)
             {
                 Grid.SetColumn(selector, column);
                 selector.Visibility = Visibility.Visible;

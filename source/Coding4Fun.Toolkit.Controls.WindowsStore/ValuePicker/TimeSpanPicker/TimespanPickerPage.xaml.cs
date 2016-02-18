@@ -59,7 +59,8 @@ namespace Coding4Fun.Toolkit.Controls
 				new char[] { 'H', 'M', 'S' },
 				new LoopingSelector[] { PrimarySelector, SecondarySelector, TertiarySelector });
 
-			return selectors.Where(s => !(s.DataSource.IsEmpty));
+			var result = selectors.Where(s => !(s.DataSource.IsEmpty));
+			return result;
 		}
 
 		/// <summary>

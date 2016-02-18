@@ -446,13 +446,23 @@ namespace Coding4Fun.Toolkit.Controls.Primitives
 
 		void OnSizeChanged(object sender, SizeChangedEventArgs e)
 		{
-			//if (Orientation == Orientation.Vertical)
-			//	_centeringTransform.Y = Math.Round(e.NewSize.Height / 2);
-			//else
-			//	_centeringTransform.X = Math.Round(e.NewSize.Width / 2);
+			if (_itemsPanel == null)
+			{
+				_itemsPanel = GetTemplateChild(ItemsPanelName) as Panel ?? new Canvas();
+				_centeringTransform = GetTemplateChild(CenteringTransformName) as TranslateTransform ?? new TranslateTransform();
+				_panningTransform = GetTemplateChild(PanningTransformName) as TranslateTransform ?? new TranslateTransform();
 
-			//Clip = new RectangleGeometry() { Rect = new Rect(0, 0, e.NewSize.Width, e.NewSize.Height) };
-			//UpdateData();
+				CreateVisuals();
+
+			}
+
+			if (Orientation == Orientation.Vertical)
+				_centeringTransform.Y = Math.Round(e.NewSize.Height / 2);
+			else
+				_centeringTransform.X = Math.Round(e.NewSize.Width / 2);
+
+			Clip = new RectangleGeometry() { Rect = new Rect(0, 0, e.NewSize.Width, e.NewSize.Height) };
+			UpdateData();
 		}
 
 		void OnWrapperClick(object sender, EventArgs e)
