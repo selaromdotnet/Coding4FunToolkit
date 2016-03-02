@@ -5,11 +5,8 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-#if WP8
-using System.Windows.Media;
-using System.Windows.Controls;
 
-#endif
+
 namespace Coding4Fun.Toolkit.Controls.Primitives
 {
     /// <summary>
@@ -56,7 +53,7 @@ namespace Coding4Fun.Toolkit.Controls.Primitives
         public LoopingSelectorItem()
         {
             DefaultStyleKey = typeof(LoopingSelectorItem);
-			this.PointerPressed += LoopingSelectorItem_MouseLeftButtonDown;
+            this.PointerPressed += LoopingSelectorItem_MouseLeftButtonDown;
             this.PointerReleased += LoopingSelectorItem_MouseLeftButtonUp;
             this.PointerCaptureLost += LoopingSelectorItem_LostMouseCapture;
             this.Tapped += LoopingSelectorItem_Tap;
@@ -93,20 +90,20 @@ namespace Coding4Fun.Toolkit.Controls.Primitives
         /// <returns>The current state.</returns>
         internal State GetState() { return _state; }
 
-		void LoopingSelectorItem_Tap(object sender, TappedRoutedEventArgs e)
-		{
+        void LoopingSelectorItem_Tap(object sender, TappedRoutedEventArgs e)
+        {
             e.Handled = true;
         }
 
         void LoopingSelectorItem_MouseLeftButtonDown(object sender, PointerRoutedEventArgs e)
         {
-			this.CapturePointer(e.Pointer);
+            this.CapturePointer(e.Pointer);
             _shouldClick = true;
         }
 
         void LoopingSelectorItem_MouseLeftButtonUp(object sender, PointerRoutedEventArgs e)
         {
-			this.ReleasePointerCapture(e.Pointer);
+            this.ReleasePointerCapture(e.Pointer);
 
             if (_shouldClick)
             {

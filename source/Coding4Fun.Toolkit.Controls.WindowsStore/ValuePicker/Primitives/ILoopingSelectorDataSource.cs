@@ -4,12 +4,7 @@
 // All other rights reserved.
 
 using System;
-#if WP8
-using System.Windows.Controls;
-#endif
-#if WINDOWS_STORE
 using Windows.UI.Xaml.Controls;
-#endif
 
 namespace Coding4Fun.Toolkit.Controls.Primitives
 {
