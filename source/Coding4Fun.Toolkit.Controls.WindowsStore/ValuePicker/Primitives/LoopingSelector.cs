@@ -225,6 +225,8 @@ namespace Coding4Fun.Toolkit.Controls.Primitives
 
             DefaultStyleKey = typeof(LoopingSelector);
             CreateEventHandlers();
+
+            this.ManipulationMode = ManipulationModes.All;
         }
 
         /// <summary>
@@ -399,40 +401,40 @@ namespace Coding4Fun.Toolkit.Controls.Primitives
             if (_isDragging)
             {
                 // See if it was a flick
-                //if (e.IsInertial)
-                //{
-                //	_state = State.Flicking;
-                //	_selectedItem = null;
+                if (e.IsInertial)
+                {
+                    _state = State.Flicking;
+                    _selectedItem = null;
 
-                //	if (!IsExpanded)
-                //	{
-                //		IsExpanded = true;
-                //	}
+                    if (!IsExpanded)
+                    {
+                        IsExpanded = true;
+                    }
 
-                //	Point velocity;
+                    Point velocity;
 
-                //	if (Orientation == Orientation.Vertical)
-                //		velocity = new Point(0, e.FinalVelocities.LinearVelocity.Y);
-                //	else
-                //		velocity = new Point(e.FinalVelocities.LinearVelocity.X, 0);
+                    if (Orientation == Orientation.Vertical)
+                        velocity = new Point(0, e.Velocities.Linear.Y);
+                    else
+                        velocity = new Point(e.Velocities.Linear.X, 0);
 
-                //	double flickDuration = PhysicsConstants.GetStopTime(velocity, Friction, MaximumSpeed, ParkingSpeed);
-                //	Point flickEndPoint = PhysicsConstants.GetStopPoint(velocity, Friction, MaximumSpeed, ParkingSpeed);
-                //	IEasingFunction flickEase = PhysicsConstants.GetEasingFunction(flickDuration, Friction);
+                    double flickDuration = PhysicsConstants.GetStopTime(velocity, Friction, MaximumSpeed, ParkingSpeed);
+                    Point flickEndPoint = PhysicsConstants.GetStopPoint(velocity, Friction, MaximumSpeed, ParkingSpeed);
+                    var flickEase = PhysicsConstants.GetEasingFunction(flickDuration, Friction);
 
-                //	double to;
-                //	if (Orientation == Orientation.Vertical)
-                //		to = _panningTransform.Y + flickEndPoint.Y;
-                //	else
-                //		to = _panningTransform.X + flickEndPoint.X;
+                    double to;
+                    if (Orientation == Orientation.Vertical)
+                        to = _panningTransform.Y + flickEndPoint.Y;
+                    else
+                        to = _panningTransform.X + flickEndPoint.X;
 
-                //	AnimatePanel(new Duration(TimeSpan.FromSeconds(flickDuration)), flickEase, to);
+                    AnimatePanel(new Duration(TimeSpan.FromSeconds(flickDuration)), flickEase, to);
 
-                //	e.Handled = true;
+                    e.Handled = true;
 
-                //	_selectedItem = null;
-                //	UpdateItemState();
-                //}
+                    _selectedItem = null;
+                    UpdateItemState();
+                }
 
                 if (_state == State.Dragging)
                 {
@@ -974,11 +976,11 @@ namespace Coding4Fun.Toolkit.Controls.Primitives
 
             this.Tapped += OnTap;
 
-            PointerPressed += LoopingSelector_MouseLeftButtonDown;
-            PointerReleased += LoopingSelector_MouseLeftButtonUp;
+            // PointerPressed += LoopingSelector_MouseLeftButtonDown;
+            // PointerReleased += LoopingSelector_MouseLeftButtonUp;
 
-            //AddHandler(this.PointerPressed, new MouseButtonEventHandler(LoopingSelector_MouseLeftButtonDown), true);
-            //	AddHandler(this.PointerReleased, new MouseButtonEventHandler(LoopingSelector_MouseLeftButtonUp), true);
+            AddHandler(PointerPressedEvent, new PointerEventHandler(LoopingSelector_MouseLeftButtonDown), true);
+            AddHandler(PointerReleasedEvent, new PointerEventHandler(LoopingSelector_MouseLeftButtonUp), true);
         }
 
         private LoopingSelectorItem CreateAndAddItem(Panel parent, object content)

@@ -103,13 +103,15 @@ namespace Coding4Fun.Toolkit.Controls.Primitives
 
         void LoopingSelectorItem_MouseLeftButtonUp(object sender, PointerRoutedEventArgs e)
         {
-            this.ReleasePointerCapture(e.Pointer);
+
 
             if (_shouldClick)
             {
                 _shouldClick = false;
                 SafeRaise.Raise(Click, this);
             }
+
+            this.ReleasePointerCapture(e.Pointer);
         }
 
         void LoopingSelectorItem_LostMouseCapture(object sender, PointerRoutedEventArgs e)

@@ -169,9 +169,9 @@
                             VerticalAlignment="Bottom"
                             Margin="6">
                             <TextBlock
-                                Text="5"
+                                Text="{Binding HourNumber, Converter={StaticResource NumberMultiplierConverter}}"
                                 FontSize="54"
-                                Margin="0,-8" FontFamily="Global User Interface"/>
+                                Margin="0,-8"/>
                             <TextBlock
                                 Text="Hours"
                                 FontSize="20"
